@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+.addBag {
+  background-color: blue;
+}
+.accItem {
+  margin-bottom: 0.5rem;
+  /* border: 1px solid #ccc; */
+  border-radius: 0.5rem;
+  border: none;
+  /* transition: background-color 0.3s ease; */
+  /* background-color: brown; */
+}
+.accItem svg {
+  display: none;
+}
+
+.arrow {
+  float: right;
+  margin-left: 10px;
+  background-color: orange;
+}
+.text-default-400{
+  background-color: red;
+  color: yellow;
+}
+.accitem{
+  background-color: red;
+  color: yellow;
+}
+
+/* FaqAccordion.css */
+
+.faq-accordion {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* width: 1055px; */
+  justify-content: center;
+  align-items:center ;
+}
+
+.accordion-item {
+  width: fit-content;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+overflow: hidden;
+}
+
+.accordion-title {
+padding: 10px;
+background-color: #f0f0f0;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.accordion-content {
+/* padding: 10px; */
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.3s ease-out;
+}
+
+.accordion-content.open {
+max-height: 200px; /* Adjust height as needed */
+}
+
+.icon-collapse::before,
+.icon-expand::before {
+content: '▼';
+transition: transform 0.3s ease-out;
+}
+
+.icon-expand::before {
+transform: rotate(0deg);
+}
+
+.icon-collapse::before {
+transform: rotate(180deg);
+}
+.text-gray-900::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: currentColor; /* Use currentColor to match text color */
+  transition: width 0.3s ease-in-out; /* Adjust the transition duration and easing as needed */
+}
+.prevBtn ::before
+{
+  padding: 4px;
+  background: red;
+  color: red;
+
+}
+.text-gray-900:hover::after {
+  width: 100%; /* Full width on hover */
+}
+/*  */
+
+/* slick-custom.css */
+
+/* Custom styles for the vertical arrows */
+.slick-prev,
+.slick-next {
+  width: 30px; /* Adjust width as needed */
+  height: 100px; /* Adjust height to match your design */
+  z-index: 1; /* Ensure arrows are above the slides */
+}
+
+.slick-prev {
+  left: -80px; /* Position the left arrow */
+  transform: translateY(-50%);
+}
+
+.slick-next {
+  right: -40px; /* Position the right arrow */
+  transform: translateY(-50%);
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px; /* Adjust arrow size */
+  line-height: 1; /* Adjust vertical alignment if needed */
+}
+
+/* Example styling for the arrows (you can customize further) */
+.slick-prev:before {
+  content: '←'; /* Unicode arrow or image */
+}
+
+.slick-next:before {
+  content: '→'; /* Unicode arrow or image */
+}
+
+
+
+/* div {
+  font-family: "Montserrat", sans-serif;
+} */
+ .discTable{
+  td {
+    padding: 12px 3px;
+  }
+ }
+
+body {
+ 
+  /* font-family: 'Dancing Script', 'Helvetica Neue', cursive; */
+  /* font-family: "Roboto", sans-serif; */
+  /* font-family: "Poppins", sans-serif; */
+  /* font-family: "Plus Jakarta Sans", sans-serif; */
+  /* font-family: "icomoon"; */
+  font-size: 16px;
+  line-height: 28.8px;
+  font-weight: 400;
+  background-color: #ffffff;
+  color: #86898E;
+  min-height: 100vh;
+  width: 100%;
+
+
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
