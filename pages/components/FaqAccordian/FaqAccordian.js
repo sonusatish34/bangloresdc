@@ -3,25 +3,26 @@ import React, { useState } from 'react';
 const FaqAccordion = () => {
   const faqData = [
     {
-      question: 'What are the requirements for renting a car?',
-      answer: "<p><b>Age 18+</b></p><p>After Booking Successful you can Upload your selfie photo & Aadhar card & Driving License in App one time only from next booking documents not required.</p><p>Our team will verify & Approve your documents.</p><p>You must upload your documents before your pickup time otherwise your booking will be Auto canceled no refund.</p>"
+      question: 'Documents required?',
+      answer: "<p><p>Age 18+</p></p><p>After Booking Successful you can Upload your selfie photo & Aadhar card & Driving License in App one time only from next booking documents not required.</p><p>Our team will verify & Approve your documents.</p><p>You must upload your documents before your pickup time otherwise your booking will be Auto cancelled no refund.</p>"
     },
     {
-      question: 'What Incase Of Any Damage To A Car?',
-      answer: "<b>Rental Agreement:</b><p>No refunds or adjustments for another car booking in case of damage.</p><b>Damage Coverage</b><p>Up to 2 lakhs: Customer responsible for full cost.<p>Over 2 lakhs:</p><p>Basic protection Customer pays 20,000.</p></p><p>Premium protection: Customer pays ₹10,000.</p><b>Insurance Claim Process:</b><p>Customer required to:</p><p>File an FIR (police report)</p><p>Submit driver's license</p><p>Visit police station and insurance company for verification (multiple visits may be required)</p><p><span><b>Important Note:</b></span> Insurance not applicable for damages under ₹2 lakhs.</p> "
+      question:"Damage protection",
+      answer:"<div><p>If You Choose</p><p>Zero Deposit Damage Protection</p><p>You Pay Up-to 20000rs Only in case of damage</p><p>If Major Damage Customer should bring fir copy or panchanama from police station Customer should support for Insurance</p><p>Customer should support for Insurance Verification Until Approved</p></div>    <div><p>If You Choose</p><p>Bike + Rc</p><p>No Insurance Will be Applied full Damage Amount Lakhs Of Money Should be Paid by Customer</p><p>In-case of damage Rent Amount No Refund & No Adjustment for Another Car booking.</p><p>Note: In case vehicle damage estimates exceed Rs 2,00,000, a mandatory deductible equivalent to the estimated damage amount is required.</p></div>",
+    },
+  
+    {
+      question: 'Late Or Extention Rules ?',
+      answer: "<div><p>200/hr for 5 Seater</p><p>400/hr for 6,7,8 Seater</p><p>If You Extend More than 24hr before Return Time Same Price</p><p>If You Extend After Return Time, Then Double Amount will be charged</p></div>"
     },
     {
-      question: 'What is the cost of Extension ?',
-      answer: "    <p><b>Free Extension: </b>You can extend your rental for free up until your pickup time by modifying your reservation through 'My Trips' in the app.</p><b>Return After Pickup Time:</b><p>Up to 23 Hours: The engine will automatically shut off after your rental period ends. You can extend your rental for an additional fee:</p><p>₹400 per hour for a 5-seater vehicle.</p><p>₹600 per hour for a 7-seater vehicle.</p><b>24 Hours or More:</b><p>Both the rental amount and damage protection fee will be doubled for the extended period.</p><b>Extensions Beyond 7 Days:</b><p>You will only be charged the regular rental rate and damage protection fee for the extended period. There is no additional hourly charge.</p>"
+      question: 'Pickup Car Location',
+      answer:"<p>In My Trips You Will Get Exact Car Location After booking Successfully After Uploading Documents</p>",
     },
     {
-      question: 'what is the cancellation policy',
-      answer:"<p>50% Refund before 12hrs pickup</p><p>25% Refund before 6hrs pickup</p><p>10% Refund before 2hrs pickup</p><p>0% Refund after that</p>",
-    },
-    {
-      question: 'How Do Unlimited Kilometers And Zero Deposit Work?',
-      answer: "All of our rental cars at Long Drive Cars come with an unlimited mileage policy and a zero deposit. This implies that when you rent a car from us, there is no upfront security deposit required, and you are free to drive as much as you like without incurring any further fees. It's how we give our clients a hassle-free, reasonably priced rental car experience."
-    },
+      question: 'Refund & Cancellation Policy',
+      answer:"<p>50% Refund before 12hrs pick-up time</p><p>25% Refund before pick-up time</p><p>0% Refund after that</p>",
+    }, 
   ];
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -39,7 +40,7 @@ const FaqAccordion = () => {
           >
             <span className=" lg:w-full xs:text-sm font-semibold capitalize text-base w-64">{item.question}</span>
             <svg
-              className={`lg:w-6 lg:h-6 w-4 h-4 rounded bg-[#7c92f4] transition-transform ${
+              className={`lg:w-6 lg:h-6 w-4 h-4 rounded bg-[#ffde32] text-white transition-transform ${
                 activeIndex === index ? 'transform rotate-180' : ''
               }`}
               xmlns="http://www.w3.org/2000/svg"

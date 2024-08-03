@@ -21,6 +21,8 @@ import { BiPhoneCall } from "react-icons/bi";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoReload } from "react-icons/io5";
 import CallBackForm from '../CallBackForm/CallBackForm';
+import { FaCar } from "react-icons/fa";
+import { VscColorMode } from "react-icons/vsc";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -97,12 +99,12 @@ export default function Homepage({ data }) {
           slidesToShow: 2,
           slidesToScroll: 2,
           // rows: 2,
-          slidesPerRow: 2, // 2 slides per row (2 columns)
+          slidesPerRow: 2, 
           pauseOnHover: true,
           autoplay: true,
           speed: 2000,
           vertical: true,
-          verticalSwiping: true, // Enable vertical swiping
+          verticalSwiping: true, 
           swipeToSlide: true,
           arrows: false
 
@@ -119,27 +121,35 @@ export default function Homepage({ data }) {
   return (
     <div className="min-h-screen">
       <div className='mt-28 xl:mt-0 2xl:mt-0 lg:mt-0'>
-        <div className='h-full md:justify-between xs:justify-end flex flex-wrap sm:justify-end justify-between bg-white'>
-        <div className={`${styles.triangleElement} xl:w-[660px] xs:pt-16 lg:pt-0 lg:w-[460px] lg:h-[500px] w-`}>
+        <div className='h-full md:justify-between xs:justify-normal xs:flex-col-reverse md:flex-row flex flex-wrap justify-between bg-white'>
+          <div className={`${styles.triangleElement} xl:w-[660px] xs:pt-16 lg:pt-0 lg:w-[460px] lg:h-[500px] w-`}>
             <ImageChange />
           </div>
-          <div className='lg:w-6/12 md:w-2/4 xl:pt-20 xs:pt-20 pl-12'>
-            <h2 className="lg:text-left lg:pr-16 text-black font-[500] xl:text-2xl text-xl font-jakarta " data-wow-delay="50ms" data-wow-duration="200ms">
-              <p className='lg:text-5xl xs:text-2xl lg:pb-2 font-bold pb-1'>Self Drive Car Rental </p>
-              <p className='lg:text-5xl xs:text-2xl font-bold'>Starting at <span className='pl-2 text-blue-500'>₹ 70/hr</span></p>
-              <div className='flex xs:flex-wrap xl:pt-28 lg:gap-8 pt-8 gap-2 lg:w-full'>
-                <div className="flex items-center gap-1 p-2 bg-[#ffffff] border-[2px] shadow-xl border-[#7c92f4] rounded-md">
-                  <RiMoneyRupeeCircleFill className="bg-[#7c92f4] text-white rounded-md p-1" size={40} />
-                  <p className="ml-2">Zero Deposit</p>
+          <div className='lg:w-6/12 md:w-2/4 xl:pt-20 xs:pt-20 xs:pl-16 md:pl-0'>
+            <h2 className="lg:text-left text-black font-[500] xl:text-base text-xl font-jakarta " data-wow-delay="50ms" data-wow-duration="200ms">
+              <p className='xl:text-5xl lg:text-4xl xs:text-2xl lg:pb-2 font-bold pb-1'>Self Drive Car Rental </p>
+              <p className='xl:text-5xl lg:text-4xl xs:text-2xl font-bold'>Starting at <span className='pl-2 text-blue-500'>₹ 77/hr</span></p>
+              <div className='flex xs:flex-wrap xl:pt-16 lg:gap-8 pt-8 gap-2 lg:w-full xs:text-xs md:text-sm xl:text-xl'>
+                <div className=" flex items-center gap-1 p-2 bg-[#ffffff] border-[2px] shadow-sm border-[#ffde32] rounded-md">
+                  <RiMoneyRupeeCircleFill className="bg-[#ffde32] text-white rounded-md p-1 xs:size-8" size={40} />
+                  <p className=" ">Zero Deposit</p>
                 </div>
-                <div className="flex items-center gap-1 p-2 bg-[#ffffff] border-[2px] shadow-xl border-[#7c92f4] rounded-md">
-                  <SlSpeedometer className="bg-[#7c92f4] text-white rounded-md p-1" size={40} />
-                  <p className=" lg:ml-2">Unlimited Kilometers</p>
+                <div className="flex items-center gap-1 p-2 bg-[#ffffff] border-[2px] shadow-sm border-[#ffde32]  rounded-md">
+                  <FaCar className="bg-[#ffde32] text-white rounded-md p-1 xs:size-8" size={40} />
+                  <p className=" ">Check Original Car Photo</p>
                 </div>
+                <div className="flex items-center gap-1 p-2 bg-[#ffffff] border-[2px] shadow-sm border-[#ffde32]  rounded-md">
+                  <SlSpeedometer className="bg-[#ffde32] text-white rounded-md p-1 xs:size-8" size={40} />
+                  <p className=" lg: ">Unlimited Kilometers</p>
+                </div>
+                {/* <div className="flex items-center gap-1 p-2 bg-[#ffffff] border-[2px] shadow-sm border-[#ffde32]  rounded-md">
+                  <VscColorMode className="bg-[#ffde32] text-white rounded-md p-1 xs:size-8" size={40} />
+                  <p className=" lg: ">Choose your Favourite Color</p>
+                </div> */}
               </div>
             </h2>
           </div>
-          
+
         </div>
       </div>
       <div className='bg-gray-800 flex flex-col justify-center items-center gap-y-6 py-20'>
@@ -248,7 +258,6 @@ export default function Homepage({ data }) {
                     <p className='pt- font-bold'>Renault</p>
                   </div>
                 </div>
-
               </Slider>
 
             </div>
@@ -276,7 +285,7 @@ export default function Homepage({ data }) {
               <React.Fragment key={index}>
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col  xs:w-[90%] md:w-72 h-[444px] lg:hover:scale-105">
                   <div className="relative h-64">
-                    <Link href={`/${item?.maker_model.toLowerCase()}`}>
+                  <Link href={`/${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
                       <Image
                         src={replaceText(item?.car_image_car_right_view)}
                         alt="Car"
@@ -287,10 +296,9 @@ export default function Homepage({ data }) {
                       />
                     </Link>
                   </div>
-
                   <div className="px-2 pt-4 flex flex-col gap-4 p-1">
                     <div className='flex items-baseline justify-between px-2'>
-                      <Link href={`/${item.maker_model}`}>
+                    <Link href={`/${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
                         <p className="text-gray-700 cursor-pointer font-semibold text-[11px] hover:text-red-600 w-fit">{item.maker_model}</p>
                       </Link>
                       <p className="text-blue-500 font-bold">₹ {item.price_24_hours * 24}/day</p>
@@ -312,12 +320,12 @@ export default function Homepage({ data }) {
                     <div className='text-black flex justify-center font-semibold'>For Booking</div>
                     <div className='flex justify-around gap-1 pb-2 text-white'>
                       <button className='bg-green-500 rounded-full p-2'>
-                        <Link href="https://api.whatsapp.com/send?phone=+9666677405&text=Hi%21" target='_blank'>
+                        <Link href="https://api.whatsapp.com/send?phone=+9986666395&text=Hi%0AI%20am%20looking%20for%20a%20car%20booking." target='_blank'>
                           <p className=' flex gap-1 text-sm'><span><FaWhatsapp size={20} /></span> <span>Whatsapp</span></p>
                         </Link>
                       </button>
                       <button className='bg-blue-500 rounded-full p-2'>
-                        <Link href="tel:9666677405" target='_blank'>
+                        <Link href="tel:9986666395" target='_blank'>
                           <p className=' flex gap-1 text-sm'><span><BiPhoneCall size={20} /></span> <span>Call Us</span></p>
                         </Link>
                       </button>
@@ -325,7 +333,7 @@ export default function Homepage({ data }) {
                   </div>
                 </div>
                 {(index + 1) % 5 === 0 && (
-                  <div className="bg-orange-100 rounded-lg shadow-lg overflow-hidden flex flex-col  xs:w-[90%] justify-center md:w-72 h-[444px] lg:hover:scale-105">
+                  <div className="bg-[#ffde32] rounded-lg shadow-lg overflow-hidden flex flex-col  xs:w-[90%] justify-center md:w-72 h-[444px] lg:hover:scale-105">
                     <div>
                       <Image
                         src={disc}
@@ -347,9 +355,9 @@ export default function Homepage({ data }) {
           <div className="text-center md:pb-10 pb-6 ">
             <button
               className="bg-blue-500 text-lg font-bold text-white px-9 py-2 rounded-full"
-              onClick={handleLoadMore}
+              // onClick={handleLoadMore}
             >
-              <div className='flex justify-center items-center gap-2'><span>Load more</span><span><IoReload /></span></div>
+              <div className='flex justify-center items-center gap-2'><span><Link href={"/explore-self-drive-cars-in-bangalore"}>View All Cars</Link></span></div>
             </button>
           </div>
         )}
@@ -360,25 +368,21 @@ export default function Homepage({ data }) {
         <h2 className='uppercase p-2 mb-4 text-center font-bold xl:text-2xl font-newfont'>Frequently asked questions</h2>
         <FaqAccordian />
       </div>
-      <div className='flex p-5 justify-around xl:justify-between lg:p-8 flex-wrap bg-[#7c92f4] rounded-md text-white mx-[14px] lg:mx-[58px] my-3 items-center'>
-        <div className='xl:w-2/6 xl:text-left xs:w-full xs:text-center lg:w-2/5 lg:text-xl text-left text-lg  lg:p-4 font-semibold'>
+      <div className='flex p-5 justify-around xl:justify-between lg:p-8 flex-wrap bg-[#ffde32] rounded-md text-white mx-[14px] lg:mx-[58px] my-3 items-center'>
+        <div className='xl:w-5/12 xl:text-left xs:w-full xs:text-center lg:w-2/5 lg:text-4xl text-left text-lg  lg:p-4 lg:pl-14 font-semibold'>
           Get in touch with us to arrange your booking
         </div>
-        <div className='flex flex-col pt-4 items-center justify-start gap-2 text-lg lg:p-4 font-semibold cursor-pointer pr-'>
-
+        <div className='flex flex-col pt-4 lg:pr-16 items-center justify-start gap-2 text-lg lg:p-4 font-semibold cursor-pointer pr-'>
           <p>CONTACT US NOW</p>
-
-          <div className='flex justify-around gap-1 pb-2 text-white'>
-            <button className='bg-green-500 rounded-full p-2 '>
-              <Link href="https://api.whatsapp.com/send?phone=9666677405" target='_blank'>
-                <p className=' flex gap-1 text-sm'><span><FaWhatsapp size={20} /></span> <span>Whatsapp</span></p>
+          <div className='flex justify-around gap-3 pb-2 text-white'>
+            <button className='bg-green-500  rounded-full p-2 '>
+              <Link href="https://api.whatsapp.com/send?phone=+9986666395&text=Hi%0AI%20am%20looking%20for%20a%20car%20booking." target='_blank'>
+                <p className=' flex items-center justify-center gap-1 text-sm'><span><FaWhatsapp size={30} /></span> <span>Whatsapp</span></p>
               </Link>
             </button>
             <button className='bg-blue-500 rounded-full p-2'>
-              <Link href="tel:9666677405" target='_blank'>
-
-                <p className=' flex gap-1 text-sm'><span><BiPhoneCall size={20} /></span> <span>Call Us</span></p>
-
+              <Link href="tel:9986666395" target='_blank'>
+                <p className='flex items-center justify-center gap-1 text-sm'><span><BiPhoneCall size={30} /></span> <span>Call Us</span></p>
               </Link>
             </button>
           </div>

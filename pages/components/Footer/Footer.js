@@ -22,7 +22,7 @@ function Footer() {
                             <div className='flex justify-center items-center'>
                                 <ul >
                                     <li className='text-base'>Telangana, AP</li>
-                                    <li className='text-lg font-bold'><Link href="tel:9666677405" target='_blank'>9666-677-405</Link></li>
+                                    <li className='text-lg font-bold'><Link href="tel:9986666395" target='_blank'>9986-666-395</Link></li>
                                 </ul>
                             </div>
                             <div className='flex items-center'>
@@ -41,7 +41,7 @@ function Footer() {
                             <Link href={'https://www.facebook.com/selfdrivecarsbylongdrivecars/'} target='_blank'>
                                 <p className='hover:text-blue-500 cursor-pointer'><FaFacebook className='lg:size-8' /></p>
                             </Link>
-                            <Link href={'https://www.instagram.com/longdrivecars_official/'} target='_blank'>
+                            <Link href={'https://www.instagram.com/longdrivecars_bangalore/?hl=en'} target='_blank'>
                                 <p className='hover:text-blue-500 cursor-pointer'><FaInstagram className='lg:size-8' /></p>
                             </Link>
                             <Link href={'https://in.linkedin.com/company/long-drive-cars'} target='_blank'>
