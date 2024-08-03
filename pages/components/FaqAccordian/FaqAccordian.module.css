@@ -1,32 +1,9 @@
 
-.addBag {
-    background-color: blue;
-}
-.accItem {
-    margin-bottom: 0.5rem;
-    /* border: 1px solid #ccc; */
-    border-radius: 0.5rem;
-    border: none;
-    /* transition: background-color 0.3s ease; */
-    /* background-color: brown; */
-  }
-  .accItem svg {
-    display: none;
-  }
-
-.arrow {
-    float: right;
-    margin-left: 10px;
-    background-color: orange;
-  }
 .text-default-400{
     background-color: red;
     color: yellow;
   }
- .accitem{
-    background-color: red;
-    color: yellow;
- }
+
 
  /* FaqAccordion.css */
 

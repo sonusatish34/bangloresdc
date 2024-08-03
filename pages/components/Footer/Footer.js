@@ -2,7 +2,6 @@ import React from 'react'
 import Link from 'next/link'
 import { FaFacebook, FaInstagram, FaSearch, FaYoutube } from 'react-icons/fa';
 import { SiLinkedin } from "react-icons/si";
-
 import Image from 'next/image';
 
 function Footer() {
@@ -13,32 +12,32 @@ function Footer() {
                 <div className="flex xll:pb-28 flex-wrap px-4 justify-between gap-3 b0 text-white z-10 pt-16 lg:pb-24 lg:px-28 xl:px-2">
                     <div className='lg:w-3/6'>
                         <div className='flex flex-col text-lef'>
-                            <p className='lg:text-lg xs:text-xs xs:font-medium lg:font-bold'>Long drive cars a leading car rental company offers rental cars for self drive in Bangalore and various other cities. Currently operational in Bangalore, Warangal and Bangalore, Long drive cars offer a huge selection of cars ranging from luxury suvs or a sensible sedan.</p>
+                            <p className='lg:text-lg xs:text-xs xs:font-medium lg:font-semibold font-sans'>Long drive cars a leading car rental company offers rental cars for self drive in Bangalore and various other cities. Currently operational in Bangalore, Warangal and Bangalore, Long drive cars offer a huge selection of cars ranging from luxury suvs or a sensible sedan.</p>
                         </div>
                     </div>
                     <div>
                         <h2 className='text-left mb-1 xs:pt-3 text-xl font-bold'>Contact Info</h2>
                         <div className='flex md:flex-col xs:flex-row text-left text-lg xs:gap-4 xs:pb-4'>
-                            <div className='flex justify-center items-center'>
+                            <div className='flex items-center'>
                                 <ul >
                                     <li className='text-base'>Telangana, AP</li>
-                                    <li className='text-lg font-bold'><Link href="tel:9986666395" target='_blank'>9986-666-395</Link></li>
+                                    <li className='text-3xl font-bold'><Link href="tel:9986666395" target='_blank'>9986-666-395</Link></li>
                                 </ul>
                             </div>
                             <div className='flex items-center'>
                                 <ul>
                                     <li className='text-base'>Bangalore</li>
-                                    <li className='text-lg font-bold'><Link href="tel:9129122525" target='_blank'>912-912-25-25</Link></li>
+                                    <li className='text-3xl font-bold'><Link href="tel:9129122525" target='_blank'>912-912-25-25</Link></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='flex justify-center items-center text-black border-t-2 border-slate-300'>
+                <div className='flex justify-center items-center text-black border-t-2 border-slate-300 pb-4'>
                     <ul className='flex flex-wrap items-center lg:justify-between justify-center lg:pb-4 gap-5 pt-4 text-white flex-grow'>
                         <li>© selfdrivecars all rights reserved</li>
                         <li className='flex justify-end items-center gap-5 pl-2'>
-                            <Link href={'https://www.facebook.com/selfdrivecarsbylongdrivecars/'} target='_blank'>
+                        <Link href={'https://www.facebook.com/selfdrivecarsbylongdrivecars/'} target='_blank'>
                                 <p className='hover:text-blue-500 cursor-pointer'><FaFacebook className='lg:size-8' /></p>
                             </Link>
                             <Link href={'https://www.instagram.com/longdrivecars_bangalore/?hl=en'} target='_blank'>

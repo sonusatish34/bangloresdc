@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
-import rightimg from '../../images/innova.png'
+import rightimg from '../../images/innova.webp'
 import Image from 'next/image';
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import { SlSpeedometer } from "react-icons/sl";

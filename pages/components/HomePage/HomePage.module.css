@@ -1,7 +1,17 @@
 
+  .brandlogo{
+    /* background-color: red; */
+    /* margin-left: 10px;
+    margin-right: 10px; */
+  }
+  .widthscreenset
+  {
+    /* width: 80vw; */
+
+  }
  
 .triangleElement {
   /* width: 760px; */
   /* height: 500px; */
-  background: linear-gradient(to bottom left, #fff 0%, #fff 50%, #ffde32 50%, #ffde32 80%);
+  background: linear-gradient(to bottom right, #fff 0%, #fff 50%, #ffde32 50%, #ffde32 80%);
 }

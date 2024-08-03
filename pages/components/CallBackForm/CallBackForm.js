@@ -1,28 +1,17 @@
 import React, { useEffect } from 'react'
 import Image from 'next/image'
-import carphotot from '../../images/rightimg.png';
+// import carphotot from '../../images/rightimg.webp';
 import { useState } from 'react';
 
-function CallBackForm() {
-    const [phone, setPhone] = useState('');
-    const currentDateTime = new Date();
-    const [formData, setFormData] = useState({
-        timeframe: currentDateTime,
-    });
+const  CallBackForm = () => {
 
     const [mobile, setmobile] = useState("");
     const [isError, setIsError] = useState(false);
     const pattern = new RegExp(/^\d{10}$/);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
     
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (formData?.name)
-            localStorage.setItem('formData', JSON.stringify(formData));
+
         if(!isError && mobile.length == 10)
         {
             fetch('https://longdrivecarz.in/site/contacts', {
@@ -36,21 +25,20 @@ function CallBackForm() {
                     'user_location': 'Bangalore'
                 })
             });
-            // console.log("api call");
         }
         else {
-            console.log("some error");
+            // console.log("some error");
         }
         
     };
 
     return (
         <div className='bg-white'>
-            <div className='flex lg:mx-[77px] p-5 xl:mx-[98px] xs:mx-7 rounded-md justify-center bg-[#ffde32]   items-center pb-5 lg:pt-5 text-white shadow-md'>
+            <div className='flex lg:mx-[77px] p-5 xl:mx-[98px] xs:mx-7 rounded-md justify-center bg-[#ffde32] items-center pb-5 lg:pt-5 text-white shadow-md'>
                 <div className='lg:flex lg:flex-col lg:justify-center lg:items-center xl:p-5 lg:w-2/3 xl:w-2/5 xs:p-0 lg:p-0'>
                     <div className='  xl:px-6 lg:py-3'>
-                        <h2 className='md:text-2xl md:font-semibold sm:text-lg xl:text-2xl font-semibold xs:text-center'>Can't find the perfect car? </h2>
-                        <p className='text-base lg:pl-9 xl:pl-0 xl:text-base xs:text-center pt-2 xs:pt-0 xs:text-xs font-normal'>Let us help you on a quick call</p>
+                        <h2 className='md:text-2xl md:font-semibold font-sans sm:text-lg xl:text-2xl font-semibold xs:text-center'>Can't find the perfect car? </h2>
+                        <p className='text-base lg:pl-9 xl:pl-0 xl:text-base font-sans xs:text-center pt-2 xs:pt-0 xs:text-xs font-normal'>Let us help you on a quick call</p>
                     </div>
                     <form onSubmit={handleSubmit} className='rounded-lg text-black text-xs flex pt-4'>
             
