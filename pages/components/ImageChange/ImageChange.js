@@ -4,10 +4,10 @@ import { FaCar } from "react-icons/fa";
 import { VscColorMode } from "react-icons/vsc";
 import { RiMoneyRupeeCircleFill } from "react-icons/ri";
 import { SlSpeedometer } from "react-icons/sl";
-import img2 from '../../changeimg/innova.webp'
-import img3 from '../../changeimg/polo.webp'
+import img2 from '../../changeimg/innovacrysta.webp'
+import img3 from '../../changeimg/i10.webp'
 import img4 from '../../changeimg/swift.webp'
-import img5 from '../../changeimg/i20.webp'
+import img5 from '../../changeimg/creta.webp'
 const ImageChange = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const images = [
@@ -28,7 +28,7 @@ const ImageChange = () => {
   return (
     <div className='mt-28 xl:mt-0 2xl:mt-0 lg:mt-0'>
         <div className='h-full md:justify-between xs:justify-normal xs:flex-col-reverse md:flex-row flex flex-wrap justify-between bg-white'>
-          <div className={`triangleElement xl:w-[660px] xs:pt-16 lg:pt-16 lg:w-[460px] lg:h-[500px] w-`}>
+          <div className={`triangleElement xl:w-[660px] xs:pt-16 lg:pt-16 lg:w-[460px] lg:h-[500px] h-[300px] w-[300px]`}>
           <Image priority src={images[currentIndex]} alt={`Image ${currentIndex + 1}`} height={600} width={600} />
           </div>
           <div className='lg:w-6/12 md:w-2/4 xl:pt-20 xs:pt-20 xs:pl-16 md:pl-0'>

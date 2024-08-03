@@ -52,7 +52,7 @@ const HamburgerMenu = () => {
           </div>
         </Marquee>
         <div className='border-l-2 border-l-black'>
-          <li className='flex justify-end lg:gap-5 xs:gap-2 px-2'>
+          <div className='flex justify-end lg:gap-5 xs:gap-3 px-2'>
             <Link href={'https://www.facebook.com/selfdrivecarsbylongdrivecars/'} target='_blank'>
               <p className='hover:text-blue-500 cursor-pointer'><FaFacebook className='lg:size-6'/></p>
             </Link>
@@ -65,7 +65,7 @@ const HamburgerMenu = () => {
             <Link href={'https://www.youtube.com/@longdrivecars_official'} target='_blank'>
               <p className='hover:text-blue-500 cursor-pointer'><FaYoutube className='lg:size-6'/></p>
             </Link>
-          </li>
+          </div>
         </div>
       </div>
       <div className="flex bg-gray-800 justify-between text-white text-base py-2 px-3 lg:px-14">
@@ -80,9 +80,9 @@ const HamburgerMenu = () => {
       <div className="flex w-full lg:justify-between items-center z-50 fixed lg:relative bg-white lg:py-14 lg:pr-14 border-8 border-[#f5f3a4] lg:h-20">
         <div className="flex ">
           <Link href={'/'}>
-            <div className='rounded-md flex cursor-pointer items-center lg:pl-10'>
+            <div className='rounded-md flex cursor-pointer items-center lg:pl-10 pl-2'>
               <Image
-                className="w-24 lg:w-40 lg:h-40"
+                className="w-16 lg:w-40 lg:h-40"
                 src={logo2}
                 alt="carrr"
                 width={400}
@@ -90,9 +90,9 @@ const HamburgerMenu = () => {
                 priority
                 // placeholder="blur"
               />
-              <div className='w-40 text-black 2xl:w-full lg:w-96 lg:mt-2'>
+              <div className='w-40 text-black 2xl:w-full lg:w-96 lg:mt-2 pl-2'>
                 <h2 className='font-semibold xl:text-xl lg:text-xl text-xs'>Self Drive Cars <span className='text-[#ffde32]'>Bangalore</span></h2>
-                <p className='xs:text-xs lg:text-lg lg:pl-8 xs:pl-9'>
+                <p className='xs:text-xs lg:text-lg pl-6'>
                   <span className='xs:text-[7px] lg:text-[10px]'>Powered By</span>
                   <span className='lg:text-[17px] font-bold text-blue-700 text-[10px] xs:text-[8px] pl-1'>LONG DRIVE CARS</span>
                 </p>
@@ -112,7 +112,7 @@ const HamburgerMenu = () => {
         <div className='lg:hidden block'>
           <button
             ref={buttonRef}
-            className="fixed top-[6.4rem] right-5 z-40 text-[#ffde32]"
+            className="fixed top-[5.8rem] right-5 z-40 text-[#ffde32]"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -131,11 +131,11 @@ const HamburgerMenu = () => {
         </div>
         <nav
           ref={menuRef}
-          className={`${isOpen ? 'block overflow-auto' : 'hidden'} w-11/12 h-fit absolute top-24 bg-yellow-50 rounded-md p-2 pt-6 lg:pr-16 right-0 z-50 transition-transform delay-2000 ease-out text-black`}
+          className={`${isOpen ? 'block overflow-auto' : 'hidden'} w-11/12 h-fit absolute top-[4rem] bg-yellow-50 rounded-md p-2 pt-6 lg:pr-16 right-0 z-50 transition-transform delay-2000 ease-out text-black`}
           style={{ transform: `${isOpen ? 'translateX(0)' : 'translateX(-100%)'}` }}
         >
           <Link href={'/'}>
-            <div className='flex cursor-pointer items-center'>
+            <div className='pl-3 flex cursor-pointer items-center'>
               <Image
                 className="w-24 lg:w-40 lg:h-40"
                 src={logo2}

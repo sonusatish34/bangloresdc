@@ -6,15 +6,18 @@ import Image from 'next/image';
 import { BsFuelPump } from 'react-icons/bs';
 import { TbManualGearbox } from 'react-icons/tb';
 import { MdOutlineAirlineSeatReclineExtra } from 'react-icons/md';
+import { FaExchangeAlt } from "react-icons/fa";
+
 import Link from 'next/link';
 import disc from './images/discountonbook.webp'
 import { FaSearch } from 'react-icons/fa';
 import StaticData from './components/StaticData/StaticData'
 import { useMemo } from "react";
-import img2 from './changeimg/innova.webp'
-import img3 from './changeimg/polo.webp'
+
+import img2 from './changeimg/innovacrysta.webp'
+import img3 from './changeimg/i10.webp'
 import img4 from './changeimg/swift.webp'
-import img5 from './changeimg/i20.webp'
+import img5 from './changeimg/creta.webp'
 export default function car_products({ cars }) {
 
     const [mobile, setmobile] = useState("");
@@ -117,9 +120,9 @@ export default function car_products({ cars }) {
     const blockd = "block";
     const hiddend = "hidden";
     return (
-        <div className="produvt-page flex flex-col lg:flex-row gap-10 bg-slate-100">
-            <div className='flex lg:pt-12 pt-48 bg-white'>
-                <div className="text-black-400 lg:px-20  text-black">
+        <div className="produvt-page flex flex-col lg:flex-row gap-10 bg-slate-100 font-sans">
+            <div className='lg:pt-12 pt-40 bg-white'>
+                <div className="text-black-400 lg:px-20  text-black pl-10">
                     <div>
                         <div className="image-container block h-[140px] w-[180px] aspect-w-1 aspect-h-1  xs:h-[140px]">
                             <Image
@@ -133,14 +136,14 @@ export default function car_products({ cars }) {
                                 loading="lazy" />
                         </div>
                     </div>
-                    <div className='flex flex-wrap flex-col capitalize gap-6 mb-6 w-max lg:pt-2 pt-2 font-manrope'>
+                    <div className='lg:flex lg:flex-col capitalize gap-6 mb-6 lg:pt-2 pt-2 w-64 hidden'>
                         <div className="flex gap-6">
                             <p onClick={handleFilter} className="text-black text-2xl font-bold">Filters</p>
                             <button className="text-xs opacity-85" onClick={clearFilters}>Clear all </button>
                         </div>
                         <div>
                             <label className='font-semibold text-lg w-full'>Brand</label>
-                            <div className='flex flex-wrap lg:flex-col w-56 overflow-hidden capitalize'>
+                            <div className='flex flex-wrap lg:flex-col w-64 overflow-hidden capitalize gap-1'>
                                 {uniqueBrands.map(brand => (
                                     <label key={brand} className='flex items-center flex-wrap lg:w-full'>
                                         <input
@@ -156,8 +159,8 @@ export default function car_products({ cars }) {
                                 ))}
                             </div>
 
-                            <div className='flex lg:flex-col  '>
-                                <label className='font-semibold text-lg'>Seater</label>
+                            <div className='flex lg:flex-col flex-wrap gap-2'>
+                                <label className='font-semibold text-lg w-full'>Seater</label>
                                 {uniqueSeaters.map(seater => (
                                     <label key={seater} className='flex items-center'>
                                         <input
@@ -172,8 +175,8 @@ export default function car_products({ cars }) {
                                     </label>
                                 ))}
                             </div>
-                            <div className='flex lg:flex-col'>
-                                <label className='font-semibold text-lg'>Fuel Type</label>
+                            <div className='flex lg:flex-col flex-wrap gap-2'>
+                                <label className='font-semibold text-lg w-full'>Fuel Type</label>
                                 {uniqueFuelTypes.map(fuelType => (
                                     <label key={fuelType} className='flex items-center'>
                                         <input
@@ -188,8 +191,8 @@ export default function car_products({ cars }) {
                                     </label>
                                 ))}
                             </div>
-                            <div className='flex lg:flex-col'>
-                                <label className='font-semibold text-lg'>Transmission Type</label>
+                            <div className='flex lg:flex-col flex-wrap gap-2'>
+                                <label className='font-semibold text-lg w-full'>Transmission Type</label>
                                 {uniqueTrasmission.map(TransType => (
                                     <label key={TransType} className='flex items-center'>
                                         <input
@@ -206,11 +209,84 @@ export default function car_products({ cars }) {
                             </div>
                         </div>
                     </div>
+                    <div className={`flex flex-col capitalize gap-6 mb-6 lg:pt-2 pt-2 w-64 lg:hidden`}>
+                        <div className="flex gap-6">
+                            <p onClick={handleFilter} className="text-black text-lg font-bold flex gap-2 items-center border-2 border-[#ffde32] p-2 rounded-md"><span><FaExchangeAlt/></span><span>Filters</span> </p>
+                            <button className={`${filter ? blockd : hiddend } text-xs opacity-85`} onClick={clearFilters}>Clear all </button>
+                        </div>
+                        <div className={`${filter ? blockd : hiddend } text-sm flex flex-col gap-2`}>
+                            <div className='flex flex-wrap lg:flex-col gap-2 w-64 overflow-hidden capitalize'>
+                            <label className='font-semibold  w-full'>Brand</label>
+                                {uniqueBrands.map(brand => (
+                                    <label key={brand} className='flex items-center border-[1px] border-gray-400 text-gray-600 rounded-md p-1'>
+                                        <input
+                                            type='checkbox'
+                                            name='brand'
+                                            value={brand}
+                                            checked={selectedBrand === brand}
+                                            onChange={() => setSelectedBrand(brand)}
+                                            className='mr-2'
+                                        />
+                                        {brand}
+                                    </label>
+                                ))}
+                            </div>
+
+                            <div className='flex lg:flex-col flex-wrap gap-2'>
+                                <label className='font-semibold  w-full'>Seater</label>
+                                {uniqueSeaters.map(seater => (
+                                    <label key={seater} className='flex items-center border-[1px] border-gray-400 text-gray-600 rounded-md p-1'>
+                                        <input
+                                            type='checkbox'
+                                            name='seater'
+                                            value={seater}
+                                            checked={selectedSeater === seater}
+                                            onChange={() => setSelectedSeater(seater)}
+                                            className='mr-2'
+                                        />
+                                        {seater}
+                                    </label>
+                                ))}
+                            </div>
+                            <div className='flex lg:flex-col flex-wrap gap-2'>
+                                <label className='font-semibold  w-full'>Fuel Type</label>
+                                {uniqueFuelTypes.map(fuelType => (
+                                    <label key={fuelType} className='flex items-center border-[1px] border-gray-400 text-gray-600 rounded-md p-1'>
+                                        <input
+                                            type='checkbox'
+                                            name='fuelType'
+                                            value={fuelType}
+                                            checked={selectedFuelType === fuelType}
+                                            onChange={() => setSelectedFuelType(fuelType)}
+                                            className='mr-2'
+                                        />
+                                        {fuelType}
+                                    </label>
+                                ))}
+                            </div>
+                            <div className='flex lg:flex-col flex-wrap gap-2'>
+                                <label className='font-semibold w-full'>Transmission Type</label>
+                                {uniqueTrasmission.map(TransType => (
+                                    <label key={TransType} className='flex items-center border-[1px] border-gray-400 text-gray-600 rounded-md p-1'>
+                                        <input
+                                            type='checkbox'
+                                            name='TransType'
+                                            value={TransType}
+                                            checked={selectedTransType === TransType}
+                                            onChange={() => setSelectedTransType(TransType)}
+                                            className='mr-2'
+                                        />
+                                        {TransType}
+                                    </label>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
             <div className='w-full'>
-                <h2 id='explore' className="px-3 font-bold text-2xl font-jakarta pt-8 text-blue-950 mb-2 lg:text-5xl lg:mb-9 text-center">Explore Self Drive
+                <h2 id='explore' className="px-3 font-bold text-2xl pt-8 text-blue-950 mb-2 lg:text-5xl lg:mb-9 text-center">Explore Self Drive
                     Car Rentals</h2>
                 <div className='mb-9 lg:mb-16 flex flex-grow items-center justify-center'>
                     <input
@@ -244,7 +320,7 @@ export default function car_products({ cars }) {
                                 <div className="px-2 pt-4 flex flex-col gap-4 p-1">
                                     <div className='flex items-baseline justify-between px-2'>
                                         <Link href={`/${(("car-rental/" + item.maker_model).toLowerCase()).replace(/ /g, '-')}`}>
-                                            <p className="text-gray-700 cursor-pointer font-sans font-semibold text-[10px] hover:text-red-600 w-fit">{item.maker_model}</p>
+                                            <p className="text-gray-700 cursor-pointer font-semibold text-[10px] hover:text-red-600 w-fit">{item.maker_model}</p>
                                         </Link>
                                         <p className="text-blue-500 font-bold">₹ {item.price_24_hours * 24}/day</p>
                                     </div>
